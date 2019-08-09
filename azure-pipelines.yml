@@ -42,9 +42,9 @@ steps:
     arguments: '--no-restore --configuration $(buildConfiguration)'
     projects: '**/*.csproj'
 
-task: DotNetCoreCLI@2
-displayName: 'Run unit testes - $(buildConfiguration)'
-inputs:
+- task: DotNetCoreCLI@2
+  displayName: 'Run unit testes - $(buildConfiguration)'
+  inputs:
     command: 'test'
     arguments: '--no-build --configuration $(buildConfiguration)'
     publishTestResults: true
